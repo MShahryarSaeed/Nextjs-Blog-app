@@ -4,7 +4,7 @@ export async function getServerSideProps() {
 
     try {
 
-        const response = await fetch('http://localhost:3000/api/posts');
+        const response = await fetch(`${process.env.API_URL}/posts`);
 
         const data = await response.json();
 
