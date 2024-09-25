@@ -18,7 +18,10 @@ export default function AddPostPage() {
         setError(null);
 
         try {
-            const response = await fetch(`${process.env.API_URL}/posts`, {
+
+            // console.log(process.env.API_URL,"Hello");
+
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts`, {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",

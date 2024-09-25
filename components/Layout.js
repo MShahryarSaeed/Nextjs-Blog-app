@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
                 <nav>
                     <ul className="flex space-x-4">
                         <li>
-                            <Link href="/" >Home</Link>
+                            <Link href="/" to="/">Home</Link>
                         </li>
                         <li>
                             <Link href="/add-post">Add Post</Link>

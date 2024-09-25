@@ -1,11 +1,13 @@
 import Layout from "@/components/Layout";
+
+
 export async function getServerSideProps() {
 
     try {
 
         console.log(process.env.API_URL, "LLLL");
 
-        const res = await fetch(`${process.env.API_URL}/posts`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts`);
         // const res = await fetch(`http://localhost:3000/api/posts`);
 
         if (!res.ok) {
