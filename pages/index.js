@@ -5,7 +5,7 @@ export async function getServerSideProps() {
 
     try {
 
-        console.log(process.env.API_URL, "LLLL");
+        console.log(process.env.NEXT_PUBLIC_API_URL, "LLLL");
 
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts`);
         // const res = await fetch(`http://localhost:3000/api/posts`);
