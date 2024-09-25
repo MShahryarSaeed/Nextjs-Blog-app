@@ -4,6 +4,8 @@ export async function getServerSideProps() {
 
     try {
 
+      
+        
         const response = await fetch(`${process.env.API_URL}/posts`);
 
         const data = await response.json();
@@ -12,7 +14,7 @@ export async function getServerSideProps() {
 
         return {
             props: {
-                posts
+                posts: posts
             }
         }
 
@@ -21,7 +23,7 @@ export async function getServerSideProps() {
 
         return {
             props: {
-                posts
+                posts: []
             }
         }
     }

@@ -9,6 +9,7 @@ export default async function handler(req, res) {
         try {
 
             const posts = await prisma.post.findMany();
+            
 
             res.status(200).json(posts);
 
