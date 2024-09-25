@@ -1,35 +1,28 @@
 import "../app/globals.css";
-
 export async function getServerSideProps() {
 
     try {
 
-      
+        console.log(process.env.API_URL,"LLLL");
         
-        const response = await fetch(`${process.env.API_URL}/posts`);
+        const res = await fetch(`${process.env.API_URL}/posts`);
+        const posts = await res.json();
 
-        const data = await response.json();
-
-        const posts = Array.isArray(data) ? data : [];
 
         return {
-            props: {
-                posts: posts
-            }
-        }
+            props: { posts },
+        };
 
     } catch (error) {
-        console.log(error);
+
+        console.log("Failed to fetch posts: ", error);
 
         return {
-            props: {
-                posts: []
-            }
-        }
+            props: { posts: [] },
+        };
+        
     }
-
 }
-
 export default function PostPage(props) {
 
     return (
