@@ -6,6 +6,7 @@ export async function getServerSideProps() {
         console.log(process.env.API_URL, "LLLL");
 
         const res = await fetch(`${process.env.API_URL}/posts`);
+        // const res = await fetch(`http://localhost:3000/api/posts`);
 
         if (!res.ok) {
             throw new Error(`HTTP error! status: ${res.status}`);
