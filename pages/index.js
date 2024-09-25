@@ -11,7 +11,7 @@ export async function getServerSideProps() {
         // const res = await fetch(`http://localhost:3000/api/posts`);
 
         if (!res.ok) {
-            throw new Error(`HTTP error! status: ${res.status}`);
+            throw new Error(`HTTP error! stasstus: ${res.status}`);
         }
 
         const posts = await res.json();
