@@ -8,9 +8,11 @@ export async function getServerSideProps() {
 
         const data = await response.json();
 
+        const posts = Array.isArray(data) ? data : [];
+
         return {
             props: {
-                posts: data
+                posts
             }
         }
 
@@ -19,7 +21,7 @@ export async function getServerSideProps() {
 
         return {
             props: {
-                posts: []
+                posts
             }
         }
     }
